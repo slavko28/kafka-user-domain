@@ -1,0 +1,6 @@
+spring:
+  kafka:
+    topic:
+      new_device: new-device
+      external_id: new-deviceId
+    bootstrap-servers: localhost:9092
