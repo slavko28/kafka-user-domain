@@ -1,6 +1,6 @@
 package com.example.domain.user_domain.config;
 
-import com.example.domain.user_domain.service.dto.MessageRequest;
+import com.example.fcm.service.dto.MessageRequest;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

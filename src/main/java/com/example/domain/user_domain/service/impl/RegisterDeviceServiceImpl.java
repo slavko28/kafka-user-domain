@@ -5,7 +5,7 @@ import com.example.domain.user_domain.model.User;
 import com.example.domain.user_domain.service.DeviceService;
 import com.example.domain.user_domain.service.RegisterDeviceService;
 import com.example.domain.user_domain.service.UserService;
-import com.example.domain.user_domain.service.dto.MessageRequest;
+import com.example.fcm.service.dto.MessageRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -41,6 +41,7 @@ public class RegisterDeviceServiceImpl implements RegisterDeviceService {
     public void receiveExternalIdRequest(@Payload MessageRequest messageRequest,
                                          @Headers MessageHeaders headers) {
         log.info("Receive request for external device id. Message request:\n{}", messageRequest);
+
         User user = userservice.findByLogin(messageRequest.getUserLogin());
         Device device = deviceService.create(messageRequest.getMessageBody(), user);
         sendExternalId(messageRequest.getDeviceId(), device.getId());
