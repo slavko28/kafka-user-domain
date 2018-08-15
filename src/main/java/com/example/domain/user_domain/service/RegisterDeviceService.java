@@ -2,11 +2,10 @@ package com.example.domain.user_domain.service;
 
 
 import com.example.fcm.service.dto.MessageRequest;
-import org.springframework.messaging.MessageHeaders;
 
 public interface RegisterDeviceService {
 
-    void receiveExternalIdRequest(MessageRequest messageRequest, MessageHeaders headers);
+    void processIdRequest(MessageRequest messageRequest);
 
     void sendExternalId(Long forDeviceId, Long externalId);
 
