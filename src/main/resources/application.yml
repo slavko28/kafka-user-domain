@@ -5,4 +5,5 @@ spring:
     topic:
       new_device: new-device
       external_id: new-deviceId
+      messaging: messaging
     bootstrap-servers: localhost:9092
